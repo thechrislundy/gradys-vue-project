@@ -5,9 +5,8 @@
       {{ msg }}
     </h1>
     <p>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
+      A starter project using
+      <a href="https://vuejs.org/" target="_blank">Vue 3</a>.
     </p>
   </div>
 </template>
