@@ -23,4 +23,4 @@ export default {
 }
 </script>
 
-<style scss scoped></style>
+<style scoped></style>
