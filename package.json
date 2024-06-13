@@ -11,20 +11,21 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "vue": "^3.4.21",
+    "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
-    "@popperjs/core": "^2.11.8"
+    "vue": "^3.4.21"
   },
   "devDependencies": {
+    "@iconify-json/mdi": "^1.1.64",
     "@rushstack/eslint-patch": "^1.8.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/eslint-config-prettier": "^9.0.0",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.23.0",
     "prettier": "^3.2.5",
-    "vite": "^5.2.8",
+    "sass": "^1.77.5",
     "unplugin-icons": "^0.18.5",
     "unplugin-vue-components": "^0.26.0",
-    "@iconify-json/mdi": "^1.1.64"
+    "vite": "^5.2.8"
   }
 }
