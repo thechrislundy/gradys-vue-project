@@ -1,6 +1,6 @@
 <template>
   <div class="my-5 card text-center">
-    <h2 class="card-header">Counter Example Test</h2>
+    <h2 class="card-header">Counter Example Test2</h2>
     <div class="card-body">
       <div class="row my-4">
         <div class="col-sm-6 col-lg-3 my-2">
