@@ -24,6 +24,15 @@
     </div>
     <h1 class="card-footer text-body-secondary m-0">Count: {{ count }}</h1>
   </div>
+  <div class="col-sm-6 col-lg-3 my-2">
+    <div class="input-group">
+      <input type="text" class="form-control" v-model="item" />
+      <button @click="addToList" class="btn btn-primary" type="button" id="button-addon2">
+        Add to List
+      </button>
+    </div>
+    {{ list }}
+  </div>
 </template>
 
 <script>
@@ -31,7 +40,9 @@ export default {
   data() {
     return {
       count: 0,
-      amount: 0
+      amount: 0,
+      list: [],
+      item: ''
     }
   },
   methods: {
@@ -43,6 +54,9 @@ export default {
     },
     addAmount() {
       this.count = this.count + this.amount
+    },
+    addToList() {
+      this.list.push(this.item)
     }
   }
 }
