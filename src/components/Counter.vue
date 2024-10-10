@@ -31,7 +31,9 @@
         Add to List
       </button>
     </div>
-    {{ list }}
+    <ul class="list-group">
+      <li v-for="element in list" class="list-group-item">{{ element }}</li>
+    </ul>
   </div>
 </template>
 
@@ -57,6 +59,7 @@ export default {
     },
     addToList() {
       this.list.push(this.item)
+      this.item = ''
     }
   }
 }
