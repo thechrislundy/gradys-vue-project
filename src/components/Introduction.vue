@@ -1,7 +1,7 @@
 <template>
   <div class="text-center">
     <h1>
-      <i-mdi-human-greeting-variant style="padding-right: 10px" class="text-black-50" />
+      <i-mdi-human-greeting-variant style="padding-right: 10px" class="text-black-40" />
       {{ msg }}
     </h1>
     <p>
