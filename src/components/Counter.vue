@@ -32,7 +32,7 @@
       </button>
     </div>
     {{ list }}
-    <draggable item-key="id" tag="ul" class="list-group" v-model="list">
+    <draggable item-key="id" tag="ul" class="list-group" :list="list">
       <template #item="{ element }">
         <li class="list-group-item">
           {{ element.string
