@@ -31,23 +31,28 @@
         Add to List
       </button>
     </div>
-    <ul class="list-group">
-      <li v-for="(element, index) in list" class="list-group-item">
-        {{ element
-        }}<button
-          @click="removeFromList(index)"
-          class="btn btn-danger pull-right"
-          type="button"
-          id="button-addon2"
-        >
-          delete
-        </button>
-      </li>
-    </ul>
+    {{ list }}
+    <draggable item-key="id" tag="ul" class="list-group" v-model="list">
+      <template #item="{ element }">
+        <li class="list-group-item">
+          {{ element.string
+          }}<button
+            @click="removeFromList(element.id)"
+            class="btn btn-danger pull-right"
+            type="button"
+            id="button-addon2"
+          >
+            delete
+          </button>
+        </li>
+      </template>
+    </draggable>
   </div>
 </template>
 
 <script>
+import draggable from 'vuedraggable'
+
 export default {
   data() {
     return {
@@ -57,6 +62,10 @@ export default {
       item: ''
     }
   },
+  components: {
+    draggable
+  },
+
   methods: {
     add() {
       this.count++
@@ -68,11 +77,14 @@ export default {
       this.count = this.count + this.amount
     },
     addToList() {
-      this.list.push(this.item)
+      this.list.push({
+        string: this.item,
+        id: this.list.length
+      })
       this.item = ''
     },
     removeFromList(x) {
-      this.list.splice(x, 1)
+      this.list = this.list.filter((item) => item.id != x)
     }
   }
 }
