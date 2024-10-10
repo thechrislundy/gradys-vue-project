@@ -32,7 +32,17 @@
       </button>
     </div>
     <ul class="list-group">
-      <li v-for="element in list" class="list-group-item">{{ element }}</li>
+      <li v-for="(element, index) in list" class="list-group-item">
+        {{ element
+        }}<button
+          @click="removeFromList(index)"
+          class="btn btn-danger pull-right"
+          type="button"
+          id="button-addon2"
+        >
+          delete
+        </button>
+      </li>
     </ul>
   </div>
 </template>
@@ -60,6 +70,9 @@ export default {
     addToList() {
       this.list.push(this.item)
       this.item = ''
+    },
+    removeFromList(x) {
+      this.list.splice(x, 1)
     }
   }
 }
