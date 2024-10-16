@@ -47,6 +47,22 @@
         </li>
       </template>
     </draggable>
+    <div class="input-group mb-3">
+      <select v-model="sortMode" class="form-control" id="exampleFormControlSelect1">
+        <option value="-1">A-Z</option>
+        <option value="1">Z-A</option>
+      </select>
+      <div class="input-group-append">
+        <button
+          @click="sortList(sortMode)"
+          class="btn btn-outline-secondary"
+          type="button"
+          id="button-addon2"
+        >
+          Sort
+        </button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -59,7 +75,8 @@ export default {
       count: 0,
       amount: 0,
       list: [],
-      item: ''
+      item: '',
+      sortMode: null
     }
   },
   components: {
@@ -85,6 +102,21 @@ export default {
     },
     removeFromList(x) {
       this.list = this.list.filter((item) => item.id != x)
+    },
+    sortList(x = 1) {
+      this.list.sort((a, b) => {
+        const nameA = a.string.toUpperCase() // ignore upper and lowercase
+        const nameB = b.string.toUpperCase() // ignore upper and lowercase
+        if (nameA > nameB) {
+          return -x
+        }
+        if (nameA < nameB) {
+          return x
+        }
+
+        // names must be equal
+        return 0
+      })
     }
   }
 }
