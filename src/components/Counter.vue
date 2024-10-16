@@ -11,7 +11,7 @@
         </div>
         <div class="col-sm-6 col-lg-3 my-2">
           <div class="input-group">
-            <input type="number" class="form-control" v-model="amount" />
+            <input type="number" class="form-control" v-model="amount" @keyup.enter="addAmount" />
             <button @click="addAmount" class="btn btn-primary" type="button" id="button-addon2">
               Add {{ amount }} to count
             </button>
@@ -26,7 +26,7 @@
   </div>
   <div class="col-sm-6 col-lg-3 my-2">
     <div class="input-group">
-      <input type="text" class="form-control" v-model="item" />
+      <input type="text" class="form-control" v-model="item" @keyup.enter="addToList" />
       <button @click="addToList" class="btn btn-primary" type="button" id="button-addon2">
         Add to List
       </button>
